@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           CSSiding
 @namespace      github.com/benjavicente/CSSiding
-@version        0.1.0
+@version        0.1.1
 @description    Better CSS to improve Siding's bad HTML
 @author         benjavicente
 @homepageURL    https://github.com/benjavicente/CSSiding
@@ -13,8 +13,8 @@
 @-moz-document domain("intrawww.ing.puc.cl") {
   @dark: #3f3c38;
 
-  // Puede pasar que al acortar tanto el contenido, el´padding se vea en la mitad.
-  // Esto arregla esa falla en casi todos los casos.
+  // Puede pasar que al acortar tanto el contenido, el footer se vea en la mitad.
+  // Esto arregla esa falla en *casi* todos los casos.
   body {
     min-height: 100vh;
     display: flex;
@@ -48,12 +48,12 @@
     transition-duration: 0s !important;
   }
 
-  // BreadCrumb máas chico
+  // BreadCrumb más chico
   div.ing-breadcrumb {
     padding-top: 15px !important;
   }
 
-  // Botones con mejor rango / tamaño
+  // Botones con mejor rango (tamaño)
   .uc-header .uc-navbar a[id*="TopMenu"] {
     width: 100%;
     height: 100%;
@@ -68,7 +68,7 @@
     color: black;
   }
 
-  //  Menos padding y margin en el header
+  // Menos padding y margin en el header
   .uc-header .uc-navbar > div:first-child {
     padding: 0;
   }
@@ -82,7 +82,7 @@
     margin: 0;
   }
 
-  // Header sin nokmbre
+  // Header sin nombre
   .uc-header .uc-navbar > div:first-child > div:first-child > div:nth-child(3) > div:last-child > div {
     display: none;
   }
@@ -105,7 +105,7 @@
     background: @dark;
   }
 
-  // Mejor contrasete y tamaño de las letras del header
+  // Mejor contraste y tamaño de las letras del header
   .uc-header .ing-category {
     color: #585858;
     font-size: 1rem;
