@@ -1,0 +1,125 @@
+/* ==UserStyle==
+@name           CSSiding
+@namespace      github.com/benjavicente/CSSiding
+@version        0.1.0
+@description    Better CSS to improve Siding's bad HTML
+@author         benjavicente
+@homepageURL    https://github.com/benjavicente/CSSiding
+@updateURL      https://raw.githubusercontent.com/benjavicente/CSSiding/main/styles/main.user.css
+@license        MIT
+@preprocessor less
+==/UserStyle== */
+
+@-moz-document domain("intrawww.ing.puc.cl") {
+  @dark: #3f3c38;
+
+  // Puede pasar que al acortar tanto el contenido, el´padding se vea en la mitad.
+  // Esto arregla esa falla en casi todos los casos.
+  body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .ing-contenido {
+    flex-grow: 2;
+  }
+
+  // Ocultar mensaje de bienvenida
+  .uc-header .ing-mensaje-siding {
+    display: none;
+  }
+
+  // Barra de padding muy innecesaria
+  .uc-header .uc-top-bar.ing-top-bar {
+    display: none;
+  }
+
+  // Ocultar logo de Ing
+  .uc-header .ing-logo {
+    display: none;
+  }
+
+  // Sin animaciones
+  .uc-header .container-fluid {
+    height: auto !important;
+  }
+  * {
+    transition-duration: 0s !important;
+  }
+
+  // BreadCrumb máas chico
+  div.ing-breadcrumb {
+    padding-top: 15px !important;
+  }
+
+  // Botones con mejor rango / tamaño
+  .uc-header .uc-navbar a[id*="TopMenu"] {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    font-size: 1rem;
+  }
+  .ing-option {
+    width: 100%;
+    display: flex;
+    font-size: 1rem;
+    color: black;
+  }
+
+  //  Menos padding y margin en el header
+  .uc-header .uc-navbar > div:first-child {
+    padding: 0;
+  }
+  .uc-header .uc-navbar > div:first-child > div:first-child {
+    margin: 0;
+  }
+  .uc-header .uc-navbar > div:first-child > div:first-child > div:nth-child(3) > div:first-child > div {
+    padding: 0;
+  }
+  .ing-menu-options ul {
+    margin: 0;
+  }
+
+  // Header sin nokmbre
+  .uc-header .uc-navbar > div:first-child > div:first-child > div:nth-child(3) > div:last-child > div {
+    display: none;
+  }
+
+  // Imagen de siding más chica
+  div.ing-siding-logo img {
+    height: 60px;
+    width: auto;
+  }
+
+  // Header sticky
+  .uc-header {
+    position: sticky;
+    top: 0;
+    z-index: 999;
+  }
+
+  // Color de la barra de usuario
+  .uc-top-bar.ing-user-bar {
+    background: @dark;
+  }
+
+  // Mejor contrasete y tamaño de las letras del header
+  .uc-header .ing-category {
+    color: #585858;
+    font-size: 1rem;
+    font-weight: bold;
+  }
+
+  // Footer de versión movil permanente
+  div.ing-footer.d-none {
+    display: none !important;
+  }
+  div.ing-footer.d-lg-none {
+    display: block !important;
+    padding-top: 0;
+    padding-bottom: 0;
+    background: @dark;
+  }
+}
