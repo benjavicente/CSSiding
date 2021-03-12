@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           CSSiding
 @namespace      github.com/benjavicente/CSSiding
-@version        0.1.2
+@version        0.1.3
 @description    Better CSS to improve Siding's bad HTML
 @author         benjavicente
 @homepageURL    https://github.com/benjavicente/CSSiding
@@ -13,6 +13,8 @@
 @var color background-navbar "Fondo navbar" #efefef
 @var color dark "Color acento oscuro" #2a2b0f
 @var color yellow "Color acento amarrillo" #FEC300
+@var checkbox show-all-navbar "Mostrar todo el navbar en sticky" 0
+@var color tab-focus "Color de borde al usar tab para navegar" #f00
 ==/UserStyle== */
 
 @-moz-document domain("intrawww.ing.puc.cl") {
@@ -25,6 +27,11 @@
   }
   li.ing-category-active a {
     color: @yellow !important;
+  }
+
+  // Permite usar Siding sin el teclado ✨
+  :focus-visible {
+    outline: solid @tab-focus 2px !important;
   }
 
   // Puede pasar que al acortar tanto el contenido, el footer se vea en la mitad.
@@ -129,7 +136,7 @@
   // Header sticky
   .uc-header {
     position: sticky;
-    top: 0;
+    top: if(@show-all-navbar = 1, 0px, -60px);
     z-index: 999;
   }
 
