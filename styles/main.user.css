@@ -1,17 +1,31 @@
 /* ==UserStyle==
 @name           CSSiding
 @namespace      github.com/benjavicente/CSSiding
-@version        0.1.1
+@version        0.1.2
 @description    Better CSS to improve Siding's bad HTML
 @author         benjavicente
 @homepageURL    https://github.com/benjavicente/CSSiding
 @updateURL      https://raw.githubusercontent.com/benjavicente/CSSiding/main/styles/main.user.css
 @license        MIT
 @preprocessor less
+
+@var color background-main "Fondo principal" #fdfdfd
+@var color background-navbar "Fondo navbar" #efefef
+@var color dark "Color acento oscuro" #2a2b0f
+@var color yellow "Color acento amarrillo" #FEC300
 ==/UserStyle== */
 
 @-moz-document domain("intrawww.ing.puc.cl") {
-  @dark: #3f3c38;
+  // Temas de colores
+  body {
+    background: @background-main;
+  }
+  .uc-navbar {
+    background: @background-navbar;
+  }
+  li.ing-category-active a {
+    color: @yellow !important;
+  }
 
   // Puede pasar que al acortar tanto el contenido, el footer se vea en la mitad.
   // Esto arregla esa falla en *casi* todos los casos.
@@ -28,29 +42,44 @@
   // Ocultar mensaje de bienvenida
   .uc-header .ing-mensaje-siding {
     display: none;
+    content-visibility: hidden;
   }
 
   // Barra de padding muy innecesaria
   .uc-header .uc-top-bar.ing-top-bar {
     display: none;
+    content-visibility: hidden;
   }
 
   // Ocultar logo de Ing
   .uc-header .ing-logo {
     display: none;
+    content-visibility: hidden;
   }
 
   // Sin animaciones
   .uc-header .container-fluid {
     height: auto !important;
   }
-  * {
+  .uc-header * {
     transition-duration: 0s !important;
   }
 
   // BreadCrumb más chico
   div.ing-breadcrumb {
     padding-top: 15px !important;
+  }
+  // Más contraste en BreadCrumb
+  div.ing-breadcrumb-content > span > a {
+    color: @dark;
+  }
+  div.ing-breadcrumb-content > span.breadcrumb-last {
+    color: @dark;
+  }
+
+  // Más contraste en menú de la izquierda
+  div.ing-menu-lateral ul li a.ing-category {
+    color: @dark;
   }
 
   // Botones con mejor rango (tamaño)
@@ -69,6 +98,9 @@
   }
 
   // Menos padding y margin en el header
+  .uc-header .uc-navbar_nav {
+    margin: 0;
+  }
   .uc-header .uc-navbar > div:first-child {
     padding: 0;
   }
@@ -85,6 +117,7 @@
   // Header sin nombre
   .uc-header .uc-navbar > div:first-child > div:first-child > div:nth-child(3) > div:last-child > div {
     display: none;
+    content-visibility: hidden;
   }
 
   // Imagen de siding más chica
@@ -115,6 +148,7 @@
   // Footer de versión movil permanente
   div.ing-footer.d-none {
     display: none !important;
+    content-visibility: hidden;
   }
   div.ing-footer.d-lg-none {
     display: block !important;
