@@ -2,8 +2,8 @@
 
 [![Instalar con Stylus][Stylus-badge]][userstyle]
 
-Algunos arreglos en el estilo para arreglar el horroroso HTML de la
-página.
+Algunos arreglos en el estilo para arreglar
+el horroroso HTML de la página.
 
 Se necesita [Stylus][stylus-releases].
 
