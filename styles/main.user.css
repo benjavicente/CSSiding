@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           CSSiding
 @namespace      github.com/benjavicente/CSSiding
-@version        0.2.0
+@version        0.2.1
 @description    Better CSS to improve Siding's bad HTML
 @author         benjavicente
 @homepageURL    https://github.com/benjavicente/CSSiding
@@ -133,6 +133,14 @@
     font-size: 1rem;
     color: black;
   }
+  .ing-menu-lateral > ul > li  {
+    display: flex
+  }
+  .ing-menu-lateral > ul > li > a {
+    width: 100%;
+    height: 100%;
+  }
+
 
   // Menos padding y margin en el header
   .uc-header .uc-navbar_nav {
