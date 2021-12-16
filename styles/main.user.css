@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           CSSiding
 @namespace      github.com/benjavicente/CSSiding
-@version        0.2.1
+@version        0.3.0
 @description    Better CSS to improve Siding's bad HTML
 @author         benjavicente
 @homepageURL    https://github.com/benjavicente/CSSiding
@@ -42,7 +42,8 @@
   .ing-btn-menu-active-url a:hover,
   .ing-btn-menu-active-url i.uc-icon,
   .uc-icon.icon-shape--rounded i.ing-dropdown-icon,
-  .uc-heading-decoration {
+  .uc-heading-decoration,
+  i.ing-dropdown-icon {
     background: @yellow !important;
   }
   li.ing-category-active a,
@@ -169,10 +170,16 @@
   }
 
   // Imagen de siding más chica
-  div.ing-siding-logo img {
+  div.ing-siding-logo img,
+  div.ing-siding-logo-mobile img {
     height: 60px;
     width: auto;
-    // Y con color elegido ✨
+  }
+
+  // Filtro de color elegido ✨
+  .ing-icono,
+  div.ing-siding-logo img,
+  div.ing-siding-logo-mobile img {
     filter: hue-rotate(calc((hue(@yellow) * 1 - 49) * 1deg));
   }
 
@@ -186,6 +193,11 @@
   // Color de la barra de usuario
   .uc-top-bar.ing-user-bar {
     background: @dark;
+  }
+
+  // Manejo de tamaño de los links de la barra superior oscura
+  .ing-user-space {
+    flex: 1;
   }
 
   // Mejor contraste y tamaño de las letras del header
@@ -205,5 +217,55 @@
     padding-top: 0;
     padding-bottom: 0;
     background: @dark;
+  }
+
+  // Botones de ing.cursos más chicos en movil
+  div.ing-icono-mobile {
+    padding: 5px;
+    flex: 0 1 100px;
+    min-width: 110px;
+    > p {
+      margin: 0;
+    }
+  }
+
+  // Eliminar overflow en el contenido en ing-cursos
+  row > .ing-app-content {
+    overflow-x: clip;
+    box-sizing: border-box;
+    > table:not(:first-child) {
+      table-layout : fixed;
+      > tbody > tr > td {
+        display: inline-block;
+        width: 100% !important;
+        max-width: 600px;
+      }
+    }
+  }
+
+  // Hacer que la barra negra no se baje
+  .ing-category-bar > .row:first-child {
+    flex-wrap: nowrap;
+    max-width: 100%
+  }
+
+  // Color del botón navbar movil
+  a.uc-navbar_mobile-button {
+    background-color: @dark;
+  }
+
+  // Navbar movil más chico
+  .uc-navbar_mobile-bar {
+    margin: 0;
+    padding: 0;
+    > .ing-siding-logo-mobile {
+      padding: 10px 15px;
+    }
+  }
+
+  // Menú lateral más compacto
+  div.ing-menu-lateral {
+    margin: 0;
+    padding: 10px 8px;
   }
 }
